@@ -1,5 +1,5 @@
 # Haven-SmallTweaks
-A collection of custom css mods to tweak [ancsemi/Haven](https://github.com/ancsemi/Haven) layout.
+A collection of custom css mods to tweak the [ancsemi/Haven](https://github.com/ancsemi/Haven) web-app layout.
 
 ## The Tweaks
 ### Big-Tweak
