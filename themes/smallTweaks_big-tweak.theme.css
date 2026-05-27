@@ -17,7 +17,6 @@
   Adds backround bubbles to messages to make each message appear more unique.
 */
 
-/* convert sidebar civs to block and allow containing overflow  */
 :root {
   --message-radius: var(--radius);
   --message-background-color: var(--bg-card);
