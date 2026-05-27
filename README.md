@@ -118,6 +118,8 @@ I always find myself looking at the voice users area, and have trouble finding t
 
 ## Installation
 ### Bash Script
+For docker deployments:
+
 Run the following script on the host. (Replace "haven" in the script with your haven container name.)
 
 ```
