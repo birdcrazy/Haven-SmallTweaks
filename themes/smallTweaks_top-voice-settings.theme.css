@@ -1,0 +1,25 @@
+/**
+ * @name        [smallTweaks] top-voice-settings
+ * @description Moves the voice settings closer to the voice users.
+ * @author      birdycrazy
+ * @version     1.0
+ * @icon        🎤
+ */
+
+/*
+  Moves the voice settings up, to be closer the voice users.
+  Rather than at the bottom of the dock, where it seems a little disassociated with the voice-users location.
+*/
+
+/* :root {
+} */
+
+/* Make mobile view settings button visible in the left dock */
+#voice-panel {
+  order: -2;
+}
+
+#voice-settings-panel {
+  order: -1;
+}
+

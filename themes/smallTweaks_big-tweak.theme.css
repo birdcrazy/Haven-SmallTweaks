@@ -1,0 +1,270 @@
+/**
+ * @name        [smallTweaks] Big-Tweak
+ * @description All of the smallTweaks combined
+ * @author      birdycrazy
+ * @version     1.0
+ * @icon        💥
+ */
+
+/*
+  Combines all of the smallTweeks css mods into one css file for easy setting
+*/
+
+/****************************************************************************************** */
+/**********************            chat-bubbles            ******************************** */
+/****************************************************************************************** */
+/*
+  Adds backround bubbles to messages to make each message appear more unique.
+*/
+
+/* convert sidebar civs to block and allow containing overflow  */
+:root {
+  --message-radius: var(--radius);
+  --message-background-color: var(--bg-card);
+
+  --message-radius-double:   calc( 2 * var(--message-radius));
+  --message-radius-negative: calc(-1 * var(--message-radius));
+}
+
+/* Make "box" effect around messages */
+.message,
+.message-compact {
+
+  /* only change content width if not a touchscreen device */
+  @media not (pointer: coarse){
+    width: fit-content;
+  }
+
+  background-color: var(--message-background-color);
+  border-radius: var(--message-radius);
+
+  /* when message is hovered, force rounded corners */
+  &:hover{
+    border-radius: var(--message-radius) !important;
+  }
+
+  /* Round bottom right corner when a primary message box follows the message (not a compact message box) */
+  &:not(:hover):has(+ .message-compact:not(:hover)) {
+    border-bottom-right-radius: 0px;
+  }
+}
+
+/* remove message upper boarder */
+.message {
+  border: none;
+}
+
+/* modify box around subsiquent messages from same user to only wrap around message, not timestamp */
+.message-compact {
+  padding-left: 4px !important;
+  margin-left: 40px !important;
+
+  padding-top: 0px;
+  margin-top: -2px;
+
+  /* adjust timestamp position to stay to the left of message content */
+  .compact-time {
+    left: -38px;
+  }
+
+  /* display lead-out radius when message, and root message aren't hovered */
+  .message:not(:hover) + &:not(:hover)::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      height: var(--message-radius-double);
+      width: var(--message-radius-double);
+      background-color: transparent;
+      z-index: 10;
+
+      right: 100%;
+      border-top-right-radius: 50%;
+      box-shadow: var(--message-radius) var(--message-radius-negative) 0 0 var(--message-background-color);
+      clip-path: inset(-0.5px -0.5px 0 0);
+    }
+  
+  /* remove bottom left radius when message, and next message, arn't in hover states  */
+  &:not(:hover):has(+ &:not(:hover)){
+    border-bottom-left-radius: 0px;
+  }
+  
+  /* remove top left radius when message, and previous message, arn't in hover states  */
+  &:not(:hover) + &:not(:hover),
+  .message:not(:hover) + &:not(:hover){
+    border-top-left-radius: 0px;
+  }
+}
+
+
+/****************************************************************************************** */
+/**********************        left-message-toolbar        ******************************** */
+/****************************************************************************************** */
+/*
+  Moves the message toolbar to the left side of messages
+
+  Sometimes I find it dificult on wide screens to drag the mouse all the way to the right of the message to open the message toolbar for the correct message.
+  This makes it easier to ensure I am using the toolbar for the intended message.
+*/
+
+/* only apply on non-touch device */
+@media not (pointer: coarse) {
+
+  /* Move the message toolbar to the left side of messages */
+  .msg-toolbar {
+    left: 4px;
+    top: 100%;
+    right: auto;
+    bottom: auto;
+    transform: translateY(-5px);
+
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  /* change overflow toolbar to extend horizontally */
+  .msg-toolbar-overflow {
+    flex-direction: row;
+    top: -3px;
+    left:100%;
+    bottom: auto;
+    right: auto;
+
+    padding: 2px;
+
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  /* Provide a little more space under the bottom message so the msg-toolbar isn't hidden under the message-input-area */
+  #messages {
+    padding-bottom: 29px;
+  }
+}
+
+
+/****************************************************************************************** */
+/**********************        left-settings-button        ******************************** */
+/****************************************************************************************** */
+/*
+  Moves the settings button to the left dock and removes the settings button from the right-dock/user-list
+
+  gives more room to see users in the user list 
+*/
+
+/* Make mobile view settings button visible in the left dock */
+#mobile-settings-btn {
+  display: block;
+}
+
+/* remove desktop settings pannnel/button from the right dock */
+#right-sidebar > div.panel.sidebar-settings-panel {
+  display: none;
+}
+
+
+/****************************************************************************************** */
+/**********************         top-voice-settings         ******************************** */
+/****************************************************************************************** */
+/*
+  Moves the voice settings up, to be closer the voice users.
+  Rather than at the bottom of the dock, where it seems a little disassociated with the voice-users location.
+*/
+
+#voice-panel {
+  order: -2;
+}
+
+#voice-settings-panel {
+  order: -1;
+}
+
+
+/****************************************************************************************** */
+/**********************       full-scroll-left-dock        ******************************** */
+/****************************************************************************************** */
+/*
+  Changes the multiple channel scroll areas to one single scroll area.
+  Provides easier channel/DM navigate on small screens.
+*/
+
+/* convert sidebar divs to block and allow containing overflow  */
+#sidebar-split,
+#sidebar-mod-container {
+  overflow: auto;
+  display: block;
+}
+
+/* remove slider curser  */
+#sidebar-split-handle {
+  cursor: auto;
+}
+
+
+/****************************************************************************************** */
+/**********************       compact-create-options       ******************************** */
+/****************************************************************************************** */
+/*
+  Makes channel creation options more compact to use less virtical space in the sidebar.
+  Gives a little more room for the channel list when create-channel section is expanded
+*/
+
+
+/* change checkbox layout to horizontal layout  */
+#create-section-body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: -5px;
+
+  /* keep channel input row full width */
+  & > .input-row {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
+
+/* remove options text and reduce div size */
+#create-section-body > .checkbox-row {
+  margin-top: 0 !important;
+  width: fit-content;
+
+  & > span > span {
+    display: none;
+  }
+}
+
+
+/****************************************************************************************** */
+/*******************            mobile-sidebars-extended          ************************* */
+/****************************************************************************************** */
+/*
+  Reduces wasted space in the left and right sidebars to provide more viewable area for content
+*/
+
+/* only adjust when in mobile view */
+#app:has(.mobile-overlay.active) > #app-body {
+
+  /* remove bottom padding on left sidbar */
+  & > aside.sidebar{
+    padding-bottom: 0px;
+  }
+
+  /* remove bottom and top padding on the right sidebar */
+  & > #right-sidebar {
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+
+  /* hide "Join Voice" button when already in the call */
+  /* .right-sidebar-voice .panel:has(#voice-users .you-tag) #voice-join-mobile {
+    display: none !important;
+  } */
+}
+
+
+/****************************************************************************************** */
+/*******************                                              ************************* */
+/****************************************************************************************** */
+

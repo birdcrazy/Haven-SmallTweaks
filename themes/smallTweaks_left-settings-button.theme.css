@@ -1,0 +1,26 @@
+/**
+ * @name        [smallTweaks] left-settings-button
+ * @description Moves the settings button to the left dock
+ * @author      birdycrazy
+ * @version     1.0
+ * @icon        ⚙️
+ */
+
+/*
+  Moves the settings button to the left dock and removes the settings button from the right-dock/user-list
+
+  gives more room to see users in the user list 
+*/
+
+/* :root {
+} */
+
+/* Make mobile view settings button visible in the left dock */
+#mobile-settings-btn {
+  display: block;
+}
+
+/* remove desktop settings pannnel/button from the right dock */
+#right-sidebar > div.panel.sidebar-settings-panel {
+  display: none;
+}

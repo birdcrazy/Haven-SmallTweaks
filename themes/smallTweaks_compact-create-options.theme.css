@@ -1,0 +1,41 @@
+/**
+ * @name        [smallTweaks] compact-create-options
+ * @description Makes channel creation options more compact to use less virtical space in the sidebar.
+ * @author      birdycrazy
+ * @version     1.0
+ * @icon        ☑️
+ */
+
+/*
+  Makes channel creation options more compact to use less virtical space in the sidebar.
+  Gives a little more room for the channel list when create-channel section is expanded
+*/
+
+/* :root {
+} */
+
+/* change checkbox layout to horizontal layout  */
+#create-section-body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: -5px;
+
+  /* keep channel input row full width */
+  & > .input-row {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
+
+
+/* remove options text and reduce div size */
+#create-section-body > .checkbox-row {
+  margin-top: 0 !important;
+  width: fit-content;
+
+  & > span > span {
+    display: none;
+  }
+}

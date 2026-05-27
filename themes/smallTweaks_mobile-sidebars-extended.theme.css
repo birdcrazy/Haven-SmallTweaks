@@ -1,0 +1,34 @@
+/**
+ * @name        [smallTweaks] mobile-sidebars-extended
+ * @description Reduces wasted space in the sidebars on small screens to provide more viewable area for content
+ * @author      birdycrazy
+ * @version     1.0
+ * @icon        ⚙️
+ */
+
+/*
+  Reduces wasted space in the left and right sidebars to provide more viewable area for content
+*/
+
+/* :root {
+} */
+
+/* only adjust when in mobile view */
+#app:has(.mobile-overlay.active) > #app-body {
+
+  /* remove bottom padding on left sidbar */
+  & > aside.sidebar{
+    padding-bottom: 0px;
+  }
+
+  /* remove bottom and top padding on the right sidebar */
+  & > #right-sidebar {
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+
+  /* hide "Join Voice" button when already in the call */
+  /* .right-sidebar-voice .panel:has(#voice-users .you-tag) #voice-join-mobile {
+    display: none !important;
+  } */
+}

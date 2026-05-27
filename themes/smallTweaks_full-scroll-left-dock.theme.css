@@ -1,0 +1,27 @@
+/**
+ * @name        [smallTweaks] full-scroll-dock
+ * @description Changes the multiple channel scroll areas to one single scroll area
+ * @author      birdycrazy
+ * @version     1.0
+ * @icon        ⚙️
+ */
+
+/*
+  Changes the multiple channel scroll areas to one single scroll area.
+  Provides easier channel/DM navigate on small screens.
+*/
+
+/* :root {
+} */
+
+/* convert sidebar divs to block and allow containing overflow  */
+#sidebar-split,
+#sidebar-mod-container {
+  overflow: auto;
+  display: block;
+}
+
+/* remove slider curser  */
+#sidebar-split-handle {
+  cursor: auto;
+}

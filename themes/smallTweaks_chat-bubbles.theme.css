@@ -1,0 +1,88 @@
+/**
+ * @name        [smallTweaks] chat-bubbles
+ * @description wraps bubbles around chat messages
+ * @author      birdycrazy
+ * @version     1.0
+ * @icon        💬
+ */
+
+/*
+  Adds backround bubbles to messages to make each message appear more unique.
+*/
+
+:root {
+  --message-radius: var(--radius);
+  --message-background-color: var(--bg-card);
+
+  --message-radius-double:   calc( 2 * var(--message-radius));
+  --message-radius-negative: calc(-1 * var(--message-radius));
+}
+
+/* Make "box" effect around messages */
+.message,
+.message-compact {
+
+  /* only change content width if not a touchscreen device */
+  @media not (pointer: coarse){
+    width: fit-content;
+  }
+
+  background-color: var(--message-background-color);
+  border-radius: var(--message-radius);
+
+  /* when message is hovered, force rounded corners */
+  &:hover{
+    border-radius: var(--message-radius) !important;
+  }
+
+  /* Round bottom right corner when a primary message box follows the message (not a compact message box) */
+  &:not(:hover):has(+ .message-compact:not(:hover)) {
+    border-bottom-right-radius: 0px;
+  }
+}
+
+/* remove message upper boarder */
+.message {
+  border: none;
+}
+
+/* modify box around subsiquent messages from same user to only wrap around message, not timestamp */
+.message-compact {
+  padding-left: 4px !important;
+  margin-left: 40px !important;
+
+  padding-top: 0px;
+  margin-top: -2px;
+
+  /* adjust timestamp position to stay to the left of message content */
+  .compact-time {
+    left: -38px;
+  }
+
+  /* display lead-out radius when message, and root message aren't hovered */
+  .message:not(:hover) + &:not(:hover)::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      height: var(--message-radius-double);
+      width: var(--message-radius-double);
+      background-color: transparent;
+      z-index: 10;
+
+      right: 100%;
+      border-top-right-radius: 50%;
+      box-shadow: var(--message-radius) var(--message-radius-negative) 0 0 var(--message-background-color);
+      clip-path: inset(-0.5px -0.5px 0 0);
+    }
+  
+  /* remove bottom left radius when message, and next message, arn't in hover states  */
+  &:not(:hover):has(+ &:not(:hover)){
+    border-bottom-left-radius: 0px;
+  }
+  
+  /* remove top left radius when message, and previous message, arn't in hover states  */
+  &:not(:hover) + &:not(:hover),
+  .message:not(:hover) + &:not(:hover){
+    border-top-left-radius: 0px;
+  }
+}
