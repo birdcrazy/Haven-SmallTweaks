@@ -15,7 +15,7 @@ Adds backround bubbles to messages to make each message appear more distinct.
 | Client     | Original     | Tweaked |
 | ----------- | ----------- | ----------- |
 | Desktop | <img width="496" height="223" alt="image" src="https://github.com/user-attachments/assets/70805e5c-c044-4690-8d80-b855abbed441" /> |  <img width="504" height="225" alt="image" src="https://github.com/user-attachments/assets/2d684aaf-77cf-4c47-ac2e-9c0a4b93a73a" /> |
-| Mobile | <img width="434" height="312" alt="image" src="https://github.com/user-attachments/assets/b9c253e8-14c1-4650-b147-993a4ce6730b" /> | <img width="439" height="291" alt="image" src="https://github.com/user-attachments/assets/910ba49b-48e5-4ccf-8815-cfa7a82d015b" />  |
+| Mobile | <img width="455" height="323" alt="image" src="https://github.com/user-attachments/assets/aec795c4-7d9f-4209-88ea-dacb32ba2eb3" /> | <img width="456" height="300" alt="image" src="https://github.com/user-attachments/assets/096d5b8b-7cd8-44bc-8b92-a41cbabe66c1" />  |
 
 </details>
 
