@@ -20,10 +20,10 @@
 
   /* Move the message toolbar to the left side of messages */
   .msg-toolbar {
-    left: 4px;
-    top: 100%;
-    right: auto;
-    bottom: auto;
+    left: 4px !important;
+    top: 100% !important;
+    right: auto !important;
+    bottom: auto !important;
     transform: translateY(-5px);
 
     border-top-left-radius: 0;
