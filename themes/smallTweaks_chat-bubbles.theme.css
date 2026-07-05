@@ -22,9 +22,11 @@
 .message,
 .message-compact {
 
-  /* only change content width if not a touchscreen device */
+  /* only change content width if not a touchscreen device and not in editing state*/
   @media not (pointer: coarse){
-    width: fit-content;
+    &:not(.editing){
+      width: fit-content;
+    }
   }
 
   background-color: var(--message-background-color);
