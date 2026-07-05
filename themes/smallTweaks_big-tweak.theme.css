@@ -135,6 +135,16 @@
     border-bottom-left-radius: 0;
   }
 
+  /* Move reaction picker also */
+  .reaction-picker {
+    left: 4px !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: 5px !important;
+
+    border-bottom-left-radius: 0;
+  }
+
   /* Provide a little more space under the bottom message so the msg-toolbar isn't hidden under the message-input-area */
   #messages {
     padding-bottom: 29px;
