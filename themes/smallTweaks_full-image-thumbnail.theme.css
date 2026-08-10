@@ -1,0 +1,23 @@
+/**
+ * @name        [smallTweaks] full-image-thumbnail
+ * @description Shows entire image in preview thumbnail for wide images.
+ * @author      birdycrazy
+ * @version     1.0
+ * @icon        🎤
+ */
+
+/*
+  Moves the voice settings up, to be closer the voice users.
+  Rather than at the bottom of the dock, where it seems a little disassociated with the voice-users location.
+*/
+
+/* :root {
+} */
+
+/* Tweak image thumbnail style to display full image and not cut off parts of it */
+.chat-image {
+  width: auto;
+  max-width: 100%;
+  min-height: 3.75rem;
+  object-fit: contain;
+}
