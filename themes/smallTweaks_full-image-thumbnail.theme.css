@@ -17,6 +17,5 @@
 .chat-image {
   width: auto;
   max-width: 100%;
-  min-height: 3.75rem;
   object-fit: contain;
 }
