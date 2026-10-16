@@ -115,6 +115,19 @@ I always find myself looking at the voice users area, and have trouble finding t
 
 </details>
 
+### wide-scrollbars
+Makes the scrollbars wider and easier to grab with a mouse or finger.
+
+<details>
+
+<summary>Photos</summary>
+
+| Original     | Tweaked |
+| ----------- | ----------- |
+| <img width="300" height="370" alt="image" src="https://github.com/user-attachments/assets/51f9ae37-d640-42b5-bd24-106509df5075" /> | <img width="303" height="372" alt="image" src="https://github.com/user-attachments/assets/c78dfdf0-5b87-4fd7-9588-a58c60502da4" /> |
+
+</details>
+
 
 ## Installation
 ### Bash Script
