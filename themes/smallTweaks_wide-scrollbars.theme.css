@@ -1,15 +1,16 @@
 /**
  * @name        [smallTweaks] wide-scrollbars
- * @description Moves the voice settings closer to the voice users.
+ * @description Makes scrollbars wider.
  * @author      birdycrazy
  * @version     1.0
- * @icon        🎤
+ * @icon        ↕️
  */
 
 /*
-  Moves the voice settings up, to be closer the voice users.
-  Rather than at the bottom of the dock, where it seems a little disassociated with the voice-users location.
+  Makes the scrollbars wider, as well as some other styling
 */
+
+/* define vars for scrollbar styles */
 :root {
   --scrollbar-width: 20px;
   --scrollbar-radius: calc(var(--scrollbar-width) / 2);
