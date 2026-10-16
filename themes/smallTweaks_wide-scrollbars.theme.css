@@ -14,7 +14,7 @@
 :root {
   --scrollbar-width: 20px;
   --scrollbar-radius: calc(var(--scrollbar-width) / 2);
-  --scroll-track-background: color-mix(in srgb, var(--border) 30%, transparent);;
+  --scroll-track-background: color-mix(in srgb, var(--border) 30%, transparent);
 }
 
 
