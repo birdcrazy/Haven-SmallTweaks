@@ -298,6 +298,51 @@
   object-fit: contain;
 }
 
+
+/****************************************************************************************** */
+/*******************             wide-scrollbars                  ************************* */
+/****************************************************************************************** */
+
+/*
+  Makes the scrollbars wider, as well as some other styling
+*/
+
+/* define vars for scrollbar styles */
+:root {
+  --scrollbar-width: 20px;
+  --scrollbar-radius: calc(var(--scrollbar-width) / 2);
+  --scroll-track-background: color-mix(in srgb, var(--border) 30%, transparent);;
+}
+
+
+/* Reset standard scrollbar properties */
+* {
+  scrollbar-color: auto !important;
+  scrollbar-width: auto !important;
+}
+
+
+/* Custom scrollbar dimensions */
+*::-webkit-scrollbar,
+:root[data-theme="win95"] *::-webkit-scrollbar {
+  width: var(--scrollbar-width) !important;
+  height: var(--scrollbar-width) !important;
+}
+
+/* Don't alter the style of the win95 theme scrollbars */
+:root:not([data-theme="win95"]) {
+
+  *::-webkit-scrollbar-track {
+    border: 1px solid var(--border-light);
+    border-radius: var(--scrollbar-radius);
+    background-color: var(--scroll-track-background);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border-radius: var(--scrollbar-radius);
+  }
+}
+
 /****************************************************************************************** */
 /*******************                                              ************************* */
 /****************************************************************************************** */
